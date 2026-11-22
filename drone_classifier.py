@@ -63,3 +63,20 @@ def predict(Xs):
             out.append(model(torch.tensor(Xs[i:i + 2048], device=device)).argmax(1).cpu().numpy())
     return np.concatenate(out)
 
+
+# ---------- 3. Train, keep the epoch with best validation balanced accuracy ----------
+best = 0
+for epoch in range(EPOCHS):
+    model.train()
+    perm = torch.randperm(len(Xt))
+    for i in range(0, len(Xt), BATCH):
+        idx = perm[i:i + BATCH]
+        loss = loss_fn(model(Xt[idx].to(device)), yt[idx].to(device))
+        opt.zero_grad()
+        loss.backward()
+        opt.step()
+    val_bacc = balanced_accuracy_score(y[va], predict(X[va]))
+    print(f"epoch {epoch + 1:2d}  loss {loss.item():.4f}  val balanced acc {val_bacc:.4f}")
+    if val_bacc > best:
+        best = val_bacc
+        torch.save(model.state_dict(), "drone_cnn.pt")

@@ -36,3 +36,30 @@ for lab, cnt in zip(*np.unique(names, return_counts=True)):
 for s, name in [(1, "train"), (2, "val"), (3, "test")]:
     m = split == s
     print(f"{name}: {m.sum()} segments, {y[m].mean():.1%} drones")
+
+# ---------- 2. Model ----------
+model = nn.Sequential(
+    nn.Conv2d(1, 16, (3, 5), padding=(1, 2)), nn.BatchNorm2d(16), nn.ReLU(), nn.MaxPool2d((1, 2)),
+    nn.Conv2d(16, 32, (3, 5), padding=(1, 2)), nn.BatchNorm2d(32), nn.ReLU(), nn.MaxPool2d((1, 2)),
+    nn.Conv2d(32, 64, (3, 5), padding=(1, 2)), nn.BatchNorm2d(64), nn.ReLU(),
+    nn.AdaptiveAvgPool2d(1), nn.Flatten(), nn.Linear(64, 2),
+)
+device = "cuda" if torch.cuda.is_available() else "cpu"
+model.to(device)
+
+tr, va, te = split == 1, split == 2, split == 3
+weights = torch.tensor(len(y[tr]) / (2 * np.bincount(y[tr])), dtype=torch.float32, device=device)
+loss_fn = nn.CrossEntropyLoss(weight=weights)          # class imbalance
+opt = torch.optim.Adam(model.parameters(), lr=1e-3)
+
+Xt, yt = torch.tensor(X[tr]), torch.tensor(y[tr])
+
+
+def predict(Xs):
+    model.eval()
+    out = []
+    with torch.no_grad():
+        for i in range(0, len(Xs), 2048):
+            out.append(model(torch.tensor(Xs[i:i + 2048], device=device)).argmax(1).cpu().numpy())
+    return np.concatenate(out)
+

@@ -1,0 +1,63 @@
+Samples per label:
+  D1                                  6921
+  D2                                  9555
+  D3                                  10212
+  D4                                  8735
+  D5                                  12093
+  D6                                  11252
+  black-headed gull                   4364
+  heron                               387
+  human_run                           1499
+  human_walk                          4529
+  pigeon                              32
+  raven                               19
+  seagull                             2550
+  seagull and black-headed gull       440
+train: 56588 segments, 82.6% drones
+val: 8000 segments, 75.0% drones
+test: 8000 segments, 75.0% drones
+epoch  1  loss 0.4026  val balanced acc 0.8648
+epoch  2  loss 0.1421  val balanced acc 0.9409
+epoch  3  loss 0.0540  val balanced acc 0.9711
+epoch  4  loss 0.0288  val balanced acc 0.9765
+epoch  5  loss 0.1361  val balanced acc 0.9313
+epoch  6  loss 0.0023  val balanced acc 0.9823
+epoch  7  loss 0.0059  val balanced acc 0.9779
+epoch  8  loss 0.0060  val balanced acc 0.9480
+epoch  9  loss 0.0006  val balanced acc 0.9802
+epoch 10  loss 0.0077  val balanced acc 0.9838
+epoch 11  loss 0.0013  val balanced acc 0.9812
+epoch 12  loss 0.1067  val balanced acc 0.9206
+epoch 13  loss 0.0534  val balanced acc 0.9761
+epoch 14  loss 0.0556  val balanced acc 0.9857
+epoch 15  loss 0.1564  val balanced acc 0.9761
+
+TEST SET
+              precision    recall  f1-score   support
+
+   not drone     0.9665    0.9810    0.9737      2000
+       drone     0.9936    0.9887    0.9911      6000
+
+    accuracy                         0.9868      8000
+   macro avg     0.9801    0.9848    0.9824      8000
+weighted avg     0.9869    0.9868    0.9868      8000
+
+Confusion matrix [rows = true, cols = predicted]
+ [[1962   38]
+ [  68 5932]]
+
+Which targets get called 'drone' (test set):
+  D1                                  n=  1000  predicted drone: 97.6%
+  D2                                  n=  1000  predicted drone: 100.0%
+  D3                                  n=  1000  predicted drone: 97.2%
+  D4                                  n=  1000  predicted drone: 99.4%
+  D5                                  n=  1000  predicted drone: 99.2%
+  D6                                  n=  1000  predicted drone: 99.8%
+  black-headed gull                   n=   600  predicted drone: 1.2%
+  heron                               n=    45  predicted drone: 0.0%
+  human_run                           n=   277  predicted drone: 1.8%
+  human_walk                          n=   723  predicted drone: 0.4%
+  pigeon                              n=     4  predicted drone: 0.0%
+  raven                               n=     1  predicted drone: 0.0%
+  seagull                             n=   305  predicted drone: 7.2%
+  seagull and black-headed gull       n=    45  predicted drone: 2.2%

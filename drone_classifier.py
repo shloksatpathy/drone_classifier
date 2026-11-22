@@ -80,3 +80,15 @@ for epoch in range(EPOCHS):
     if val_bacc > best:
         best = val_bacc
         torch.save(model.state_dict(), "drone_cnn.pt")
+
+# ---------- 4. Test evaluation ----------
+model.load_state_dict(torch.load("drone_cnn.pt"))
+p = predict(X[te])
+print("\nTEST SET")
+print(classification_report(y[te], p, target_names=["not drone", "drone"], digits=4))
+print("Confusion matrix [rows = true, cols = predicted]\n", confusion_matrix(y[te], p))
+
+print("\nWhich targets get called 'drone' (test set):")
+for lab in np.unique(names[te]):
+    m = names[te] == lab
+    print(f"  {lab:35s} n={m.sum():6d}  predicted drone: {p[m].mean():.1%}")

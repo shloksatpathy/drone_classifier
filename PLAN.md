@@ -13,10 +13,10 @@ Status key: ✅ done · 🟡 partly done / needs a decision · ⏳ not started �
 
 | # | Phase | Machine | Status | Exit criterion | Result |
 |---|---|---|---|---|---|
-| 1 | Baseline + data hygiene (E1, E2, 1×150 input, 3-class H1) | Laptop | ✅ | Baseline mean ± std known; leakage measured | See `RESULTS.md` |
+| 1 | Baseline + data hygiene (E1, E2, 1×150 input, 3-class H1) | Laptop | ✅ | Baseline mean ± std known; leakage measured | 98.43 ± 0.31% → 95.57 ± 0.20% on the session split (~2.9 points of leakage) |
 | 2 | Physics simulator + validation against real spectra | Laptop | 🟡 | Simulated and real commercial-drone spectra statistically close | Medians match (mD 0.077 vs 0.073, entropy 0.282 vs 0.281); KS 0.15–0.28. A grid search over SNR, ρ and blade length did not close the gap, so the mismatch is structural (body-line broadening / clutter) |
-| 3 | Multi-head model (H1–H3, FiLM, OE, physics + consistency, open-set score) | Laptop | 🟡 | E3 > 86% | Held-out drone → drone 96.8% (sim_h1 = 0.1, 1 seed). The open-set flag is weak: AUROC ≈ 0.70, ~6% flagged |
-| 4 | Self-training (P1, students S → M → L, unknown pool) | Laptop | 🟡 | Gain over supervised in P1; no E3 regression | See `RESULTS.md`; E3 for students not run yet |
+| 3 | Multi-head model (H1–H3, FiLM, OE, physics + consistency, open-set score) | Laptop | 🟡 | E3 > 86% | Held-out drone → drone 96.3% ✅ (1 seed). **Open-set flag fails:** AUROC 0.65–0.78, 5–14% flagged in every variant |
+| 4 | Self-training (P1, students S → M → L, unknown pool) | Laptop | 🟡 | Gain over supervised in P1; no E3 regression | Student L 92.6% from 10% labels ≈ fully labeled 92.8% ✅; E3 for students not run yet |
 | 5 | bladeRF bench (Modes A/B, live inference, tachometer) | Laptop + bladeRF | 🟡 code only | Drone/hand/empty correct; fan → unknown; rotor rate within ±10% | `bladerf_bench.py` written; signal chain tested offline; **hardware path untested** |
 | 6 | Scale-up: XL teacher (transformer), P3 cross-dataset (LSS-FMCWR, RDRD), 5 seeds × all ablations, analysis-by-synthesis decoder | 🖥 Desktop | ⏳ | Every claim backed by an ablation | — |
 | 7 | Deployment: distil to S, INT8, export | Laptop → Jetson/FPGA | 🟡 | E9 drop < 1% | PTQ INT8 drop 0.14% ✅; ONNX FP32 exported; QAT and on-device runs not done |

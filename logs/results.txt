@@ -1,0 +1,153 @@
+E1 repo baseline, original split: acc 0.9843 ± 0.0031, balanced acc 0.9835 ± 0.0009
+E2 repo baseline, session split:  acc 0.9557 ± 0.0020, balanced acc 0.9601 ± 0.0025
+SIM mD: real drone median 0.073; KS bird vs drone 0.114
+    commercial median 0.077, KS vs real drone 0.175
+    stealth    median 0.346, KS vs real drone 0.580
+    exotic     median 0.095, KS vs real drone 0.111
+SIM occupied_20dB: real drone median 0.047; KS bird vs drone 0.134
+    commercial median 0.033, KS vs real drone 0.239
+    stealth    median 0.180, KS vs real drone 0.362
+    exotic     median 0.047, KS vs real drone 0.131
+SIM entropy: real drone median 0.281; KS bird vs drone 0.234
+    commercial median 0.282, KS vs real drone 0.154
+    stealth    median 0.556, KS vs real drone 0.497
+    exotic     median 0.322, KS vs real drone 0.140
+SIM peak_to_median: real drone median 35.146; KS bird vs drone 0.236
+    commercial median 32.472, KS vs real drone 0.277
+    stealth    median 24.194, KS vs real drone 0.677
+    exotic     median 31.314, KS vs real drone 0.217
+[full] session-split test: acc3 0.9281, bacc3 0.7848, drone/not acc 0.9515, seagull->drone 0.1785
+  E4 SNR None dB: acc3 0.9281, drone AUROC 0.9844
+  E4 SNR   30 dB: acc3 0.9183, drone AUROC 0.9803
+  E4 SNR   20 dB: acc3 0.8991, drone AUROC 0.9708
+  E4 SNR   10 dB: acc3 0.8281, drone AUROC 0.9072
+  E4 SNR    0 dB: acc3 0.7673, drone AUROC 0.7046
+  E7  1 scans: acc3 0.9281
+  E7  3 scans: acc3 0.9581
+  E7  5 scans: acc3 0.9664
+  E7 10 scans: acc3 0.9747
+  full held-out D1: drone 0.855  AUROC 0.815  unknown 0.300
+  full held-out D2: drone 0.988  AUROC 0.692  unknown 0.004
+  full held-out D3: drone 0.977  AUROC 0.714  unknown 0.016
+  full held-out D4: drone 0.990  AUROC 0.657  unknown 0.007
+  full held-out D5: drone 0.998  AUROC 0.625  unknown 0.007
+  full held-out D6: drone 0.966  AUROC 0.757  unknown 0.007
+E3 [full] held-out drone -> drone 0.9625, AUROC 0.7101, flagged unknown 0.0568
+  (120 s)
+[-FiLM] session-split test: acc3 0.9292, bacc3 0.8071, drone/not acc 0.9539, seagull->drone 0.1831
+  E4 SNR None dB: acc3 0.9292, drone AUROC 0.9829
+  E4 SNR   30 dB: acc3 0.9218, drone AUROC 0.9802
+  E4 SNR   20 dB: acc3 0.8986, drone AUROC 0.9719
+  E4 SNR   10 dB: acc3 0.8404, drone AUROC 0.9125
+  E4 SNR    0 dB: acc3 0.7909, drone AUROC 0.7246
+  E7  1 scans: acc3 0.9292
+  E7  3 scans: acc3 0.9554
+  E7  5 scans: acc3 0.9624
+  E7 10 scans: acc3 0.9691
+  -FiLM held-out D1: drone 0.544  AUROC 0.796  unknown 0.281
+  -FiLM held-out D2: drone 0.999  AUROC 0.609  unknown 0.005
+  -FiLM held-out D3: drone 0.979  AUROC 0.732  unknown 0.017
+  -FiLM held-out D4: drone 0.988  AUROC 0.657  unknown 0.005
+  -FiLM held-out D5: drone 0.991  AUROC 0.683  unknown 0.013
+  -FiLM held-out D6: drone 0.946  AUROC 0.766  unknown 0.004
+E3 [-FiLM] held-out drone -> drone 0.9078, AUROC 0.7071, flagged unknown 0.0541
+  (96 s)
+[-OE] session-split test: acc3 0.9385, bacc3 0.8247, drone/not acc 0.9609, seagull->drone 0.1167
+  E4 SNR None dB: acc3 0.9385, drone AUROC 0.9898
+  E4 SNR   30 dB: acc3 0.9319, drone AUROC 0.9871
+  E4 SNR   20 dB: acc3 0.9116, drone AUROC 0.9795
+  E4 SNR   10 dB: acc3 0.8328, drone AUROC 0.9264
+  E4 SNR    0 dB: acc3 0.6921, drone AUROC 0.7388
+  E7  1 scans: acc3 0.9385
+  E7  3 scans: acc3 0.9627
+  E7  5 scans: acc3 0.9677
+  E7 10 scans: acc3 0.9765
+  -OE held-out D1: drone 0.679  AUROC 0.778  unknown 0.287
+  -OE held-out D2: drone 0.999  AUROC 0.618  unknown 0.003
+  -OE held-out D3: drone 0.973  AUROC 0.802  unknown 0.015
+  -OE held-out D4: drone 0.990  AUROC 0.685  unknown 0.004
+  -OE held-out D5: drone 0.998  AUROC 0.730  unknown 0.022
+  -OE held-out D6: drone 0.937  AUROC 0.811  unknown 0.006
+E3 [-OE] held-out drone -> drone 0.9294, AUROC 0.7374, flagged unknown 0.0561
+  (117 s)
+[-H3] session-split test: acc3 0.9199, bacc3 0.7264, drone/not acc 0.9377, seagull->drone 0.3364
+  E4 SNR None dB: acc3 0.9199, drone AUROC 0.9848
+  E4 SNR   30 dB: acc3 0.9067, drone AUROC 0.9800
+  E4 SNR   20 dB: acc3 0.8864, drone AUROC 0.9659
+  E4 SNR   10 dB: acc3 0.8288, drone AUROC 0.8900
+  E4 SNR    0 dB: acc3 0.7560, drone AUROC 0.7041
+  E7  1 scans: acc3 0.9199
+  E7  3 scans: acc3 0.9316
+  E7  5 scans: acc3 0.9363
+  E7 10 scans: acc3 0.9397
+  -H3 held-out D1: drone 0.753  AUROC 0.688  unknown 0.293
+  -H3 held-out D2: drone 0.996  AUROC 0.669  unknown 0.002
+  -H3 held-out D3: drone 0.982  AUROC 0.731  unknown 0.016
+  -H3 held-out D4: drone 0.991  AUROC 0.614  unknown 0.004
+  -H3 held-out D5: drone 0.999  AUROC 0.609  unknown 0.009
+  -H3 held-out D6: drone 0.973  AUROC 0.707  unknown 0.007
+E3 [-H3] held-out drone -> drone 0.9489, AUROC 0.6699, flagged unknown 0.0552
+  (107 s)
+[-L_cons] session-split test: acc3 0.9307, bacc3 0.7983, drone/not acc 0.9538, seagull->drone 0.1762
+  E4 SNR None dB: acc3 0.9307, drone AUROC 0.9855
+  E4 SNR   30 dB: acc3 0.9246, drone AUROC 0.9824
+  E4 SNR   20 dB: acc3 0.9030, drone AUROC 0.9712
+  E4 SNR   10 dB: acc3 0.8118, drone AUROC 0.9014
+  E4 SNR    0 dB: acc3 0.6558, drone AUROC 0.7088
+  E7  1 scans: acc3 0.9307
+  E7  3 scans: acc3 0.9526
+  E7  5 scans: acc3 0.9599
+  E7 10 scans: acc3 0.9678
+  -L_cons held-out D1: drone 0.848  AUROC 0.826  unknown 0.297
+  -L_cons held-out D2: drone 0.996  AUROC 0.484  unknown 0.003
+  -L_cons held-out D3: drone 0.987  AUROC 0.707  unknown 0.017
+  -L_cons held-out D4: drone 0.993  AUROC 0.617  unknown 0.006
+  -L_cons held-out D5: drone 0.998  AUROC 0.530  unknown 0.004
+  -L_cons held-out D6: drone 0.972  AUROC 0.753  unknown 0.008
+E3 [-L_cons] held-out drone -> drone 0.9658, AUROC 0.6528, flagged unknown 0.0559
+  (117 s)
+[-sim] session-split test: acc3 0.9341, bacc3 0.8872, drone/not acc 0.9507, seagull->drone 0.0229
+  E4 SNR None dB: acc3 0.9341, drone AUROC 0.9917
+  E4 SNR   30 dB: acc3 0.9222, drone AUROC 0.9879
+  E4 SNR   20 dB: acc3 0.8817, drone AUROC 0.9817
+  E4 SNR   10 dB: acc3 0.7064, drone AUROC 0.9302
+  E4 SNR    0 dB: acc3 0.3930, drone AUROC 0.7594
+  E7  1 scans: acc3 0.9341
+  E7  3 scans: acc3 0.9538
+  E7  5 scans: acc3 0.9587
+  E7 10 scans: acc3 0.9637
+  -sim held-out D1: drone 0.629  AUROC 0.879  unknown 0.309
+  -sim held-out D2: drone 0.990  AUROC 0.776  unknown 0.027
+  -sim held-out D3: drone 0.957  AUROC 0.797  unknown 0.028
+  -sim held-out D4: drone 0.977  AUROC 0.628  unknown 0.008
+  -sim held-out D5: drone 0.994  AUROC 0.639  unknown 0.046
+  -sim held-out D6: drone 0.915  AUROC 0.771  unknown 0.060
+E3 [-sim] held-out drone -> drone 0.9104, AUROC 0.7482, flagged unknown 0.0797
+  (72 s)
+[5x150 (-sim)] session-split test: acc3 0.9472, bacc3 0.9110, drone/not acc 0.9618, seagull->drone 0.1419
+  E7  1 scans: acc3 0.9472
+  E7  3 scans: acc3 0.9548
+  E7  5 scans: acc3 0.9554
+  E7 10 scans: acc3 0.9558
+  5x150 (-sim) held-out D1: drone 0.581  AUROC 0.879  unknown 0.341
+  5x150 (-sim) held-out D2: drone 0.998  AUROC 0.724  unknown 0.008
+  5x150 (-sim) held-out D3: drone 0.869  AUROC 0.886  unknown 0.281
+  5x150 (-sim) held-out D4: drone 0.995  AUROC 0.720  unknown 0.034
+  5x150 (-sim) held-out D5: drone 0.975  AUROC 0.784  unknown 0.085
+  5x150 (-sim) held-out D6: drone 0.991  AUROC 0.700  unknown 0.061
+E3 [5x150 (-sim)] held-out drone -> drone 0.9015, AUROC 0.7824, flagged unknown 0.1350
+  (788 s)
+P1: 4441 labeled, 40025 unlabeled
+student S: 21947 pseudo-labels (acc 0.991), 525 to unknown pool
+student M: 21737 pseudo-labels (acc 0.990), 74 to unknown pool
+student L: 21179 pseudo-labels (acc 0.990), 365 to unknown pool
+unknown-pool clusters (true labels):
+  cluster 0: D1 104, D2 1, D3 1, D5 4, black-headed gull 110, heron 14, seagull 102, seagull and black-headed gull 19
+  cluster 1: black-headed gull 2, human_run 27, human_walk 12, seagull 1
+  cluster 2: D2 12, D3 1, D4 2, D5 9
+  cluster 3: D1 14, D3 2, D5 1, D6 3, black-headed gull 40, human_run 1, human_walk 1, raven 1, seagull 23, seagull and black-headed gull 2
+  cluster 4: D1 159, D2 6, D5 18, black-headed gull 42, heron 10, seagull 37, seagull and black-headed gull 13
+P1 teacher S (10% labels): acc3 0.9087, bacc3 0.7755, seagull->drone 0.1899
+P1 student S: acc3 0.8832, bacc3 0.7701, seagull->drone 0.0137
+P1 student M: acc3 0.9103, bacc3 0.7086, seagull->drone 0.1579
+P1 student L: acc3 0.9257, bacc3 0.7954, seagull->drone 0.0755

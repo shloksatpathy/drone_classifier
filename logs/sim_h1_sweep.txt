@@ -1,0 +1,61 @@
+  -sim held-out D1: drone 0.644  AUROC 0.861  unknown 0.362
+  -sim held-out D2: drone 0.992  AUROC 0.767  unknown 0.027
+  -sim held-out D3: drone 0.957  AUROC 0.812  unknown 0.033
+  -sim held-out D4: drone 0.975  AUROC 0.646  unknown 0.008
+  -sim held-out D5: drone 0.995  AUROC 0.629  unknown 0.043
+  -sim held-out D6: drone 0.940  AUROC 0.690  unknown 0.023
+E3 [-sim] held-out drone -> drone 0.9172, AUROC 0.7342, flagged unknown 0.0826
+===== sim_h1 = 0.0
+[full] session-split test: acc3 0.9223, bacc3 0.8573, drone/not acc 0.9444, seagull->drone 0.0664
+  E4 SNR None dB: acc3 0.9223, drone AUROC 0.9874
+  E4 SNR   30 dB: acc3 0.9155, drone AUROC 0.9850
+  E4 SNR   20 dB: acc3 0.8905, drone AUROC 0.9758
+  E4 SNR   10 dB: acc3 0.7659, drone AUROC 0.9123
+  E4 SNR    0 dB: acc3 0.5749, drone AUROC 0.7159
+  E7  1 scans: acc3 0.9223
+  E7  3 scans: acc3 0.9562
+  E7  5 scans: acc3 0.9637
+  E7 10 scans: acc3 0.9708
+  full held-out D1: drone 0.763  AUROC 0.763  unknown 0.309
+  full held-out D2: drone 0.942  AUROC 0.681  unknown 0.012
+  full held-out D3: drone 0.934  AUROC 0.667  unknown 0.015
+  full held-out D4: drone 0.970  AUROC 0.611  unknown 0.010
+  full held-out D5: drone 0.990  AUROC 0.616  unknown 0.011
+  full held-out D6: drone 0.945  AUROC 0.667  unknown 0.002
+E3 [full] held-out drone -> drone 0.9241, AUROC 0.6673, flagged unknown 0.0599
+===== sim_h1 = 0.1
+[full] session-split test: acc3 0.9298, bacc3 0.8062, drone/not acc 0.9532, seagull->drone 0.1373
+  E4 SNR None dB: acc3 0.9298, drone AUROC 0.9842
+  E4 SNR   30 dB: acc3 0.9234, drone AUROC 0.9809
+  E4 SNR   20 dB: acc3 0.9016, drone AUROC 0.9696
+  E4 SNR   10 dB: acc3 0.7901, drone AUROC 0.8994
+  E4 SNR    0 dB: acc3 0.6053, drone AUROC 0.7066
+  E7  1 scans: acc3 0.9298
+  E7  3 scans: acc3 0.9521
+  E7  5 scans: acc3 0.9602
+  E7 10 scans: acc3 0.9687
+  full held-out D1: drone 0.858  AUROC 0.820  unknown 0.299
+  full held-out D2: drone 0.988  AUROC 0.684  unknown 0.004
+  full held-out D3: drone 0.989  AUROC 0.705  unknown 0.019
+  full held-out D4: drone 0.993  AUROC 0.625  unknown 0.007
+  full held-out D5: drone 0.998  AUROC 0.618  unknown 0.006
+  full held-out D6: drone 0.980  AUROC 0.763  unknown 0.007
+E3 [full] held-out drone -> drone 0.9678, AUROC 0.7024, flagged unknown 0.0571
+===== sim_h1 = 0.3
+[full] session-split test: acc3 0.9209, bacc3 0.7336, drone/not acc 0.9424, seagull->drone 0.2860
+  E4 SNR None dB: acc3 0.9209, drone AUROC 0.9836
+  E4 SNR   30 dB: acc3 0.9127, drone AUROC 0.9798
+  E4 SNR   20 dB: acc3 0.8947, drone AUROC 0.9665
+  E4 SNR   10 dB: acc3 0.8288, drone AUROC 0.8929
+  E4 SNR    0 dB: acc3 0.7297, drone AUROC 0.7070
+  E7  1 scans: acc3 0.9209
+  E7  3 scans: acc3 0.9350
+  E7  5 scans: acc3 0.9386
+  E7 10 scans: acc3 0.9433
+  full held-out D1: drone 0.716  AUROC 0.734  unknown 0.273
+  full held-out D2: drone 0.994  AUROC 0.689  unknown 0.004
+  full held-out D3: drone 0.987  AUROC 0.730  unknown 0.018
+  full held-out D4: drone 0.992  AUROC 0.505  unknown 0.001
+  full held-out D5: drone 0.999  AUROC 0.501  unknown 0.003
+  full held-out D6: drone 0.996  AUROC 0.757  unknown 0.006
+E3 [full] held-out drone -> drone 0.9472, AUROC 0.6527, flagged unknown 0.0510

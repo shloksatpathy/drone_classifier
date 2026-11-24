@@ -29,7 +29,7 @@ CLASSES = ["drone", "bird", "human"]
 TYPES = ["D1", "D2", "D3", "D4", "D5", "D6"]
 SIZES = {"S": (16, 32, 64), "M": (24, 48, 96), "L": (32, 64, 128), "XL": (64, 128, 256)}
 
-LOSS_W = dict(oe=0.5, phys=0.5, cons=0.2, sim_h1=1.0)   # sim_h1: weight of simulated drones in the H1 loss
+LOSS_W = dict(oe=0.5, phys=0.5, cons=0.2, sim_h1=0.1)   # weight of simulated drones in H1 (sweep: logs/sim_h1_sweep.txt)
 EPOCHS = 15
 BATCH_REAL = 256
 BATCH_SIM = 128

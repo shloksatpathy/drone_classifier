@@ -74,15 +74,17 @@ def md_fraction(P, centre, radar):
     return 1 - inside / P.sum(1)
 
 
-def spectra(sig, radar):
+def spectra(sig, radar, v_true=None):
     """Complex slow time (B, 150) -> standardized dB spectrum, measured body velocity (normalized to
-    [-1, 1) of the velocity axis) and measured micro-Doppler fraction."""
+    [-1, 1) of the velocity axis) and micro-Doppler fraction around the measured peak, or around the
+    true body velocity when v_true is given (simulated data)."""
     P = torch.fft.fftshift(torch.fft.fft(sig, dim=1), dim=1).abs() ** 2
     db = 10 * torch.log10(P + 1e-12)
     x = (db - db.mean(1, keepdim=True)) / db.std(1, keepdim=True)
     peak = P.argmax(1)
     v_meas = (peak - N // 2).float() / (N // 2)
-    return x, v_meas, md_fraction(P, peak, radar)
+    centre = peak if v_true is None else (torch.round(v_true * (N // 2)).long() + N // 2) % N
+    return x, v_meas, md_fraction(P, centre, radar)
 
 
 def augment(raw, gen, noisy):

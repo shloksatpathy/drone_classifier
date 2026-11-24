@@ -181,3 +181,19 @@ def noisy_student(d, split, sims, flags, sizes=("S", "M", "L"), frac=0.1, cap=20
             names, cnt = np.unique(d["name"][pool][c == k], return_counts=True)
             print(f"  cluster {k}: " + ", ".join(f"{a} {b}" for a, b in zip(names, cnt)))
     return models, opensets, pool
+
+
+if __name__ == "__main__":
+    # Final models on the session split. "saab": real + SAAB sims. "bench": also bladeRF Mode A/B sims.
+    import os
+    from data import load_saab, session_split
+    from model import Net
+    os.makedirs("models", exist_ok=True)
+    d = load_saab()
+    sess = session_split(d["name"], d["session"])
+    T, V = real_pool(d, np.where(sess == 1)[0]), real_pool(d, np.where(sess == 2)[0])
+    for name, radars in [("saab", ["saab"]), ("bench", ["saab", "bench_a", "bench_b"])]:
+        sims = [sim_pool(np.load(f"dataset/sim_{r}.npz"), r) for r in radars]
+        m = fit(Net("S"), T, sims, V, {"oe", "phys", "cons"})
+        torch.save(dict(state=m.state_dict(), size="S", openset=openset_for(m, T, V, list(range(6)))), f"models/{name}.pt")
+        print("saved", f"models/{name}.pt")
